@@ -71,6 +71,6 @@ policyList = [];
 // finalist property send to other workflow to add vm to avamar
 policyList.push(vmPolicies[0]);
 returnProperties = new Properties();
-returnProperties.put("aep.avamar.policyname",vmPolicies[0].name);
-returnProperties.put("aep.avamar.domainname",domainName);
+returnProperties.put("xx.avamar.policyname",vmPolicies[0].name);
+returnProperties.put("xx.avamar.domainname",domainName);
 
