@@ -4,7 +4,7 @@ var machineInfo = getPropertyValue(payload,"machine");
 var properties = getPropertyValue(machineInfo,"properties");
 //fetch the prefix for the avamar policy names to filter policies to place the VM
 //in avamar domain other policies are excluded to use by manual
-var preFix = getPropertyValue(properties,"aep.avamar.policyPrefix");
+var preFix = getPropertyValue(properties,"xx.avamar.policyPrefix");
 //fetch the location field value to determine the domain name in avamar to place the VM
 var domainName = getPropertyValue(properties,"Vrm.DataCenter.Location");
 var vmName = getPropertyValue(machineInfo,"name");
@@ -15,7 +15,7 @@ var selectedReservationPolicyID = getPropertyValue(properties, "__reservationPol
 System.log("Reservation Policy ID : " + selectedReservationPolicyID);
 // this action is used to convert the reservationpolicy id to reservation name to determine the 
 // avamar domain name
-var reservationPolicyName = System.getModule("com.aep.utility").getReservationPolicyByID(selectedReservationPolicyID);
+var reservationPolicyName = System.getModule("com.xx.utility").getReservationPolicyByID(selectedReservationPolicyID);
 System.log("Reservation Policy Name : " + reservationPolicyName);
 domainName = reservationPolicyName;
 //all space between the name will be replaced by "_" for all domain names
